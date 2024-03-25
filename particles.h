@@ -19,8 +19,13 @@ const int max_Oscilations = 2;
 
 
 //enum for identifying type of particle in a polymorphic environment
-//Freespace is set to default (parent class)
-enum DrawType { DrawSand, DrawWater, DrawSolid, DrawFreespace };
+enum DrawType {
+    DrawSand,
+    DrawWater,
+    DrawSolid,
+    DrawFreespace   //default when instantiated
+};
+
 
 class Particle
 {

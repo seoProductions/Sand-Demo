@@ -17,14 +17,15 @@ class Engine : public olc::PixelGameEngine
 	//shared_ptr inorder to use Polymorphism
 	std::vector<std::shared_ptr<Particle>> particles;
 
-	//Sand
+	//Colors
 	olc::Pixel sandColor;
 	olc::Pixel waterColor;
 	olc::Pixel solidColor;
 
 	//Tracking which particle to instantiate
 	//with key pressed
-	uint CurrentKeyDown;
+	unsigned
+    int CurrentKeyDown;
 
 public:
 	Engine(){ sAppName = "SandGame"; }
@@ -96,16 +97,11 @@ public:
 		//Functionality for each particle in vector
 		for (auto particle: particles)
 		{
-			// check to see if particle has not hit the floor
-			// and not stationary
-			switch (particle->y < ScreenHeight() - 1 && !particle->idle)
-			{
-				case true:
-					particle->updateParticle(); //update
-			}
+			// check bounds and idle status
+			if (particle->y < ScreenHeight() - 1 && !particle->idle)
+                particle->updateParticle(); //update
 			
-			//draw particle depending on the type of particle 
-			//***Pixel color changes***
+			//draw a pixel depending on the particle's type
 			switch (particle->getDrawType())
 			{
 			case DrawSand:
@@ -121,9 +117,14 @@ public:
 			
 		}
 		
-		
 		return true; //for olc::game engine
 	}
+
+    bool onUserDestroy()
+    {
+        //free memory
+        delete Particle::collision;
+    }
 };
 
 
