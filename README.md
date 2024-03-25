@@ -39,7 +39,7 @@ This class is derived directly from the PixelGameEngine's Base class. The base c
 
  Looking into the Engine Class, I have a collection of Pointers of type "Particle" (More info on that later). I have these pointers held into std::vector simply due to simplicity and efficiency.
 
- ```c++
+```c++
 std::vector<std::shared_ptr<Particle>> particles;
 ```
 
@@ -47,28 +47,28 @@ std::vector<std::shared_ptr<Particle>> particles;
 
  ```c++
 if (GetMouse(0).bHeld)
-		{
-			switch (CurrentKeyDown)
-			{
-				case SandDown:
-					particles.push_back(
-						std::make_shared<Sand>(GetMouseX(), GetMouseY()));
-						break;
-				case WaterDown:
-					particles.push_back(
-						std::make_shared<Water>(GetMouseX(), GetMouseY()));
-						break;
-				case SolidDown:
-					particles.push_back(
-						std::make_shared<Solid>(GetMouseX(), GetMouseY()));
-						break;
-			}
-		}
+{
+	switch (CurrentKeyDown)
+	{
+		case SandDown:
+			particles.push_back(
+				std::make_shared<Sand>(GetMouseX(), GetMouseY()));
+				break;
+		case WaterDown:
+			particles.push_back(
+				std::make_shared<Water>(GetMouseX(), GetMouseY()));
+				break;
+		case SolidDown:
+			particles.push_back(
+				std::make_shared<Solid>(GetMouseX(), GetMouseY()));
+				break;
+	}
+}
 ```
 
 Each Particle is iterated over as shown here:
 
- ```c++
+```c++
 for (auto particle: particles)
 {
 	// check bounds and idle status
