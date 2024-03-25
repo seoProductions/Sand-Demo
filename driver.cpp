@@ -6,7 +6,7 @@
 #include "time.h"
 #include "collision.h"
 #include "particles.h"
-#include "olcPixelGameEngine.h"
+#include "PixelGameEngine/olcPixelGameEngine.h"
 
 //track key presses
 enum KeyDown { SandDown, WaterDown, SolidDown };
