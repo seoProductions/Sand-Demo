@@ -128,6 +128,7 @@ struct OscillationDetector
 - Solid particles never move and are always idle
 - Sand particles will try to move below, then below to the (left/right)
 - Water particles do the same as sand, exept they also try to move directly (left/right)
+
 The implementation for the rules was the most tedious part of my project, including many long and painfull debugging sessions, and crazy unexpected bugs. At the end, I got a working prototype! Far from perfect, but much more better than what I started off with.
 
 ## Collision Detection using "CollisionBoard"
@@ -170,13 +171,14 @@ std::vector<std::vector<PixelType>> board;
 To run the program, run the following command
 
 ```bash
-chmod u+x run.sh
+chmod +x run.sh
 ./run.sh
 ```
 
 Or simply compile with your compliler of choice. I am using g++ here
 
 ```bash
+#!/bin/bash
 g++ -o driver driver.cpp \
               collision.h \
               collision.cpp \
