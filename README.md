@@ -38,7 +38,8 @@ While building this project, I both learned and tested many skills including
 - Polymorphism and Inheritance
 - Shell Scripting on linux
 - How compilation and linking works in c++
--  Version controll using git 
+-  Version controll using git
+
 Here is a birds eye view of the project and its structure. Included is a UML Diagram 
 
 ![SandSimulationUML](https://github.com/seoProductions/Sand-Demo/assets/111206081/e05571c7-4e0b-4b86-a1c3-d5505d28898a)
@@ -242,10 +243,7 @@ Here are some related projects:
 
 ## Authors
 
-- [@seoProductions](https://github.com/seoProductions)
-
+[@seoProductions](https://github.com/seoProductions)
 
 ## License
-
 [MIT](https://choosealicense.com/licenses/mit/)
-
