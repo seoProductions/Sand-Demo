@@ -231,8 +231,8 @@ I am using shared pointers because the iterator generated from the code block ab
 #### I have another question!!
 
 Feel free to reach out to me through my email or LinkedIn:
-[duque.eliseo.7@gmail.com](duque.eliseo.7@gmail.com)
-[LinkedIn](https://www.linkedin.com/in/eliseo-duque)
+- [duque.eliseo.7@gmail.com](duque.eliseo.7@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/eliseo-duque)
 
 ## Related
 
