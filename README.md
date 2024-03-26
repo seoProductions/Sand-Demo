@@ -5,6 +5,27 @@ A simple project that simulates sand and water particles acting on a 2D world. T
 
 
 # Features
+#### Sand
+![sand_demonstration](https://github.com/seoProductions/Sand-Demo/assets/111206081/c46b3575-7001-45c1-91c8-3eb74aef66df)
+
+
+#### Water
+![water_demonstration](https://github.com/seoProductions/Sand-Demo/assets/111206081/f9902f85-b0b3-4a31-a1d5-f9c2f65e2d69)
+
+
+#### Solid (WALL)
+![water_pour](https://github.com/seoProductions/Sand-Demo/assets/111206081/5dedddaf-0efa-4da3-af5d-78d6465fee62)
+
+
+#### Here are some more demonstrations: 
+![stream_demonstration](https://github.com/seoProductions/Sand-Demo/assets/111206081/b16c889f-c8e7-4672-9f94-90b2b38066bf)
+
+
+![Cube Demonstration](https://github.com/seoProductions/Sand-Demo/assets/111206081/494bbe5f-07b4-42a3-a54a-9f9a033c2324)
+
+
+#### This is a messy one!
+![messy_one](https://github.com/seoProductions/Sand-Demo/assets/111206081/ed71eea2-67c8-49b4-84a2-0453b6407f99)
 
 
 ## Lessons Learned
