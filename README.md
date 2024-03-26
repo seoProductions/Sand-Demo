@@ -41,7 +41,8 @@ While building this project, I both learned and tested many skills including
 -  Version controll using git 
 Here is a birds eye view of the project and its structure. Included is a UML Diagram 
 
-<PHOTO>
+![SandSimulationUML](https://github.com/seoProductions/Sand-Demo/assets/111206081/e05571c7-4e0b-4b86-a1c3-d5505d28898a)
+
 
 # Gist of the program
 
@@ -226,8 +227,11 @@ The developer of the game engine is a favorite youtuber of mine, and I take grea
 
 I am using shared pointers because the iterator generated from the code block above - incriments the total instances of this pointer. A unique ptr woudnt allow me to generate an iterator of Particles, and I simply wanted to keep things simple
 
-Answer 2
+#### I have another question!!
 
+Feel free to reach out to me through my email or LinkedIn:
+[duque.eliseo.7@gmail.com](duque.eliseo.7@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/eliseo-duque)
 
 ## Related
 
