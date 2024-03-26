@@ -32,11 +32,11 @@ public:
     CollisionBoard(int width, int height);
 
     //Return the Particle ( if any ) in the board at  (x , y)
-    PixelType CheckBelow(int x, int y);
-    PixelType CheckBelowLeft(int x, int y);
-    PixelType CheckBelowRight(int x, int y);
-    PixelType CheckLeft(int x, int y);
-    PixelType CheckRight(int x, int y);
+    PixelType CheckBelow        (int x, int y);
+    PixelType CheckBelowLeft    (int x, int y);
+    PixelType CheckBelowRight   (int x, int y);
+    PixelType CheckLeft         (int x, int y);
+    PixelType CheckRight        (int x, int y);
 
     //Set pixelType to the board at (x , y)
     void setPixelType(int x, int y, PixelType type);

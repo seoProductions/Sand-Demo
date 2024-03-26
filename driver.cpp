@@ -9,7 +9,11 @@
 #include "PixelGameEngine/olcPixelGameEngine.h"
 
 //track key presses
-enum KeyDown { SandDown, WaterDown, SolidDown };
+enum KeyDown {
+    SandDown,
+    WaterDown,
+    SolidDown,
+};
 
 class Engine : public olc::PixelGameEngine
 {
@@ -59,7 +63,7 @@ public:
 
 	bool OnUserUpdate(float fElapsedTime) override
 	{
-		Clear(olc::BLACK);
+		Clear(olc::Pixel(40, 40, 40));
 
 		//If 'C' Pressed, Clear all particles on screen
 		if (GetKey(olc::C).bPressed)
@@ -100,7 +104,7 @@ public:
 			// check bounds and idle status
 			if (particle->y < ScreenHeight() - 1 && !particle->idle)
                 particle->updateParticle(); //update
-			
+
 			//draw a pixel depending on the particle's type
 			switch (particle->getDrawType())
 			{
@@ -131,7 +135,7 @@ public:
 int main()
 {
 	Engine game;
-	if (game.Construct(256, 240, 10, 10))   /* FEEL FREE TO MESS AROUND WITH DIMENSIONS! */
+	if (game.Construct(150, 150, 6, 6))   /* FEEL FREE TO MESS AROUND WITH DIMENSIONS! */
 		game.Start();
 
 	return 0;
