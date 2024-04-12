@@ -32,13 +32,29 @@ A simple project that simulates sand and water particles acting on a 2D world. T
 
 While building this project, I both learned and tested many skills including
 - Project Design
-- Memory manegment (Dynamic Memory)
-- How to Debug effectivley. Especially SEG FAULTS
-- Naming Conventions
+   - This project had to be drawn out and well thought about before execution!
+
+- Memory manegment
+   - I dont want to eat up my computers memory!
+
+- Dynamic memory allocation
+   - Every particle on screen is allocated onto the Heap
+   - Used smart pointers for saftey
+
+- Debugging with memory issues
+   - Segmentation Faults!
+
+- Naming things! I am working on this one!
+
 - Polymorphism and Inheritance
+   - My particle system is built entirely from OOP
+   - Working with olc::PixelGameEngine derived classes and methods
+
 - Shell Scripting on linux
-- How compilation and linking works in c++
--  Version controll using git
+   - Automated compiling system using bash scripting
+
+- Basics of version controll using git
+   - Learning to use git thru terminal will come in handy!
 
 Here is a birds eye view of the project and its structure. Included is a UML Diagram 
 
@@ -140,19 +156,27 @@ They each contain
 - specific update function 
 - specific DrawType
 
-### Special case:
-Each water particle has a structure called "OscilationDetector". It simply aids in determining when to put a water particle into idle
-
-```c++
-struct OscillationDetector
-
-```
 ### Particle Rules and behavior
 - Solid particles never move and are always idle
 - Sand particles will try to move below, then below to the (left/right)
 - Water particles do the same as sand, exept they also try to move directly (left/right)
 
 The implementation for the rules was the most tedious part of my project, including many long and painfull debugging sessions, and crazy unexpected bugs. At the end, I got a working prototype! Far from perfect, but much more better than what I started off with.
+
+### Special case:
+Each water particle has a structure called "OscilationDetector". It simply aids in determining when to put a water particle into idle.
+
+```c++
+struct OscillationDetector
+{
+    bool bIsLeft = rand() % 2; 		//random
+    short count = 0;
+};
+//Once occil_count reaches max, water particle will be set to idle
+const int max_Oscilations = 2;
+```
+Each water particle stores its current direction, and a count for direction changes ( hence the name: "Oscilations" )
+The counter only works at a constant Y level, thus at every vertical movement, the counter is reset. Once the max_Oscilations value is met, the particle is put into idle.
 
 ## Collision Detection using "CollisionBoard"
 Each particle has a static member of a CollisionBoard. This variable is set in the Engine class, and is used by all particles when checking their movements. Methods include:  
