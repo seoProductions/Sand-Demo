@@ -28,7 +28,6 @@ public:
     //board height
     int board_height;
 
-    //Constructors
     CollisionBoard(int width, int height);
 
     //Return the Particle ( if any ) in the board at  (x , y)

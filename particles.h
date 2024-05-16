@@ -14,7 +14,7 @@ struct OscillationDetector
     bool bIsLeft = rand() % 2;//initialize to random bool value
     short count = 0;
 };
-//Once occil_count reaches max, water particle will be set to idle
+//Once oscil_count reaches max, water particle will be set to idle
 const int max_Oscilations = 2;
 
 

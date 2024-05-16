@@ -10,12 +10,12 @@ g++ -o run driver.cpp \
 if [ -f run ]
 then
 {
-  echo "compiled sucessfully, starting Sand-Demo"
+  echo "compiled successfully, starting Sand-Demo"
   chmod +x run
          ./run
 
 }
 else
-  echo "ERROR: coudnt  compile"
+  echo "ERROR: couldnt  compile"
 fi
 

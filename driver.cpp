@@ -121,7 +121,6 @@ public:
 				Draw(particle->x, particle->y, solidColor);
 				break;
 			}
-			
 		}
 		
 		return true; //for olc::game engine

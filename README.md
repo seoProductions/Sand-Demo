@@ -192,13 +192,6 @@ void setPixelType(int x, int y, PixelType type);
 
 The whole std::vector or "board" is initialized to FreeSpace inside the constructor.+
 
-## Time
-I have created a Time class with purley static variables and a single function
-```c++
-static float& getDeltaTime();
-```
-Simple, yet effective.
-
 
 
 ## Enumerations

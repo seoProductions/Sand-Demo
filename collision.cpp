@@ -10,8 +10,6 @@ CollisionBoard::CollisionBoard(int width, int height)
     this->height = height;
     this->board_height = height - 17; //CAN BE CHANGED
     //not sure why 17 works, *TODO* look into it
-
-    Init();
 }
 
 
