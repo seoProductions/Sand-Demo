@@ -5,22 +5,61 @@ A simple project that simulates sand and water particles acting on a 2D world. T
 
 
 # Features
+#### Sand
+![sand_demonstration](https://github.com/seoProductions/Sand-Demo/assets/111206081/c46b3575-7001-45c1-91c8-3eb74aef66df)
+
+
+#### Water
+![water_demonstration](https://github.com/seoProductions/Sand-Demo/assets/111206081/f9902f85-b0b3-4a31-a1d5-f9c2f65e2d69)
+
+
+#### Solid (WALL)
+![water_pour](https://github.com/seoProductions/Sand-Demo/assets/111206081/5dedddaf-0efa-4da3-af5d-78d6465fee62)
+
+
+#### Here are some more demonstrations: 
+![stream_demonstration](https://github.com/seoProductions/Sand-Demo/assets/111206081/b16c889f-c8e7-4672-9f94-90b2b38066bf)
+
+
+![Cube Demonstration](https://github.com/seoProductions/Sand-Demo/assets/111206081/494bbe5f-07b4-42a3-a54a-9f9a033c2324)
+
+
+#### This is a messy one!
+![messy_one](https://github.com/seoProductions/Sand-Demo/assets/111206081/ed71eea2-67c8-49b4-84a2-0453b6407f99)
 
 
 ## Lessons Learned
 
 While building this project, I both learned and tested many skills including
 - Project Design
-- Memory manegment (Dynamic Memory)
-- How to Debug effectivley. Especially SEG FAULTS
-- Naming Conventions
+   - This project had to be drawn out and well thought about before execution!
+
+- Memory manegment
+   - I dont want to eat up my computers memory!
+
+- Dynamic memory allocation
+   - Every particle on screen is allocated onto the Heap
+   - Used smart pointers for saftey
+
+- Debugging with memory issues
+   - Segmentation Faults!
+
+- Naming things! I am working on this one!
+
 - Polymorphism and Inheritance
+   - My particle system is built entirely from OOP
+   - Working with olc::PixelGameEngine derived classes and methods
+
 - Shell Scripting on linux
-- How compilation and linking works in c++
--  Version controll using git 
+   - Automated compiling system using bash scripting
+
+- Basics of version controll using git
+   - Learning to use git thru terminal will come in handy!
+
 Here is a birds eye view of the project and its structure. Included is a UML Diagram 
 
-<PHOTO>
+![SandSimulationUML](https://github.com/seoProductions/Sand-Demo/assets/111206081/e05571c7-4e0b-4b86-a1c3-d5505d28898a)
+
 
 # Gist of the program
 
@@ -117,19 +156,27 @@ They each contain
 - specific update function 
 - specific DrawType
 
-### Special case:
-Each water particle has a structure called "OscilationDetector". It simply aids in determining when to put a water particle into idle
-
-```c++
-struct OscillationDetector
-
-```
 ### Particle Rules and behavior
 - Solid particles never move and are always idle
 - Sand particles will try to move below, then below to the (left/right)
 - Water particles do the same as sand, exept they also try to move directly (left/right)
 
 The implementation for the rules was the most tedious part of my project, including many long and painfull debugging sessions, and crazy unexpected bugs. At the end, I got a working prototype! Far from perfect, but much more better than what I started off with.
+
+### Special case:
+Each water particle has a structure called "OscilationDetector". It simply aids in determining when to put a water particle into idle.
+
+```c++
+struct OscillationDetector
+{
+    bool bIsLeft = rand() % 2; 		//random
+    short count = 0;
+};
+//Once occil_count reaches max, water particle will be set to idle
+const int max_Oscilations = 2;
+```
+Each water particle stores its current direction, and a count for direction changes ( hence the name: "Oscilations" )
+The counter only works at a constant Y level, thus at every vertical movement, the counter is reset. Once the max_Oscilations value is met, the particle is put into idle.
 
 ## Collision Detection using "CollisionBoard"
 Each particle has a static member of a CollisionBoard. This variable is set in the Engine class, and is used by all particles when checking their movements. Methods include:  
@@ -189,11 +236,6 @@ g++ -o driver driver.cpp \
 ```
 
 
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
 ## Q&A
 
 
@@ -210,8 +252,11 @@ The developer of the game engine is a favorite youtuber of mine, and I take grea
 
 I am using shared pointers because the iterator generated from the code block above - incriments the total instances of this pointer. A unique ptr woudnt allow me to generate an iterator of Particles, and I simply wanted to keep things simple
 
-Answer 2
+#### I have another question!!
 
+Feel free to reach out to me through my email or LinkedIn:
+- [duque.eliseo.7@gmail.com](duque.eliseo.7@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/eliseo-duque)
 
 ## Related
 
@@ -222,10 +267,7 @@ Here are some related projects:
 
 ## Authors
 
-- [@seoProductions](https://github.com/seoProductions)
-
+[@seoProductions](https://github.com/seoProductions)
 
 ## License
-
 [MIT](https://choosealicense.com/licenses/mit/)
-
