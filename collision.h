@@ -42,12 +42,12 @@ public:
     void setPixelType(int x, int y, PixelType type);
 
     /*  Invoked everytime collision-board is cleared or instantiated  */
+    void clear();
+
     //Set the Floor to solid
     void setFlooring();
+
     //Set the Walls to solid
     void setWalls();
-
-    //Clear the CollisionBoard vector
-    void clear();
 
 };

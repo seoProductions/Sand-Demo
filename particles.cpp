@@ -3,6 +3,7 @@
 */
 #include "particles.h"
 
+
 /***************** Base Class - Particle Implementation *******************/
 Particle::Particle(int x, int y)
 {
@@ -20,6 +21,7 @@ void inline Particle::updateParticle()
 }
 
 
+
 /************************** Sand Implementation **************************/
 Sand::Sand(int x, int y) : Particle(x, y) { }
 
@@ -34,7 +36,7 @@ void Sand::updateParticle()
     switch (collision->CheckBelow(x,y))
     {
     case FREESPACE:
-        y += speedInFREESPACE;//increment
+        y += speedInFREESPACE * dt;
         break;
 
     case SOLID:
@@ -45,7 +47,7 @@ void Sand::updateParticle()
     case WATER:
         //**Sand CAN move into water**
         //still falling, but at a slower rate
-        y += speedInWATER;
+        y += speedInWATER * dt;
         break;
 
     case SAND:
@@ -172,7 +174,7 @@ void Water::updateParticle()
         //still falling so increment y by a constant
         case FREESPACE:
         {
-            y += speedInFREESPACE;//increment
+            y += speedInFREESPACE * dt;
 
             occil_detector.count = 0; //reset counter
             break;

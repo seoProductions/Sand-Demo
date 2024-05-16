@@ -3,7 +3,7 @@
     k is a constant of increment
 */
 #pragma once
-#include "cstdlib" //rand() - can get away with not setting the seed
+#include "cstdlib" // rand() - can get away with not setting the seed
 #include "collision.h"
 
 /* Structure for Water Particle */
@@ -30,7 +30,8 @@ enum DrawType {
 class Particle
 {
 public:
-    
+    static inline float dt = 0;
+
     //the state that the current particle is either idle or moving
     bool idle;
 

@@ -3,7 +3,6 @@
 */
 
 #define OLC_PGE_APPLICATION
-#include "time.h"
 #include "collision.h"
 #include "particles.h"
 #include "PixelGameEngine/olcPixelGameEngine.h"
@@ -35,7 +34,8 @@ public:
 	Engine(){ sAppName = "SandGame"; }
 
 public:
-	bool OnUserCreate() override
+
+    bool OnUserCreate() override
 	{
 		//seed
 		srand(time(0));
@@ -61,15 +61,18 @@ public:
 		return true;
 	}
 
+
 	bool OnUserUpdate(float fElapsedTime) override
 	{
+        Particle::dt = fElapsedTime * 1000;
+
 		Clear(olc::Pixel(40, 40, 40));
 
 		//If 'C' Pressed, Clear all particles on screen
 		if (GetKey(olc::C).bPressed)
 		{
-			Particle::collision->clear();
-			particles.clear();
+			Particle::collision->clear();       // board
+			particles.clear();                  // particles
 		}
 
 

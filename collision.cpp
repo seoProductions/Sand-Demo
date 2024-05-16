@@ -11,13 +11,9 @@ CollisionBoard::CollisionBoard(int width, int height)
     this->board_height = height - 17; //CAN BE CHANGED
     //not sure why 17 works, *TODO* look into it
 
-    //resize 
-    //initialize whole board to freespace
-    board.resize(height, std::vector<PixelType>(width, FREESPACE));
-    //and set floor
-    setFlooring();
-    setWalls();
+    Init();
 }
+
 
 //Return the Particle ( if any ) in the board starting at (x , y)
 PixelType CollisionBoard::CheckBelow(int x, int y)
@@ -92,13 +88,13 @@ inline void CollisionBoard::setWalls()
 }
 
 //Clear CollisionBoard vector
-void CollisionBoard::clear() 
-{ 
-    //fill 2D board vector with FREESPACE
+void CollisionBoard::clear()
+{
+    //initialize whole board to freespace
+    board.clear();
     board.resize(height, std::vector<PixelType>(width, FREESPACE));
 
-    //reset floor and walls as solid
+    //preset boundaries
     setFlooring();
     setWalls();
-
 }
